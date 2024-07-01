@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success Details</title>
+    <!-- Include CSS for modal popup -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Styles for modal popup */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            padding-top: 60px;
+        }
+
+        /* Modal Content/Box */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto; /* 5% from the top, centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+        }
+
+        /* Close Button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Congratulations! Your are successfully registared as a Seller</h1>
+    
+    <!-- Button to open modal popup -->
+<button onclick="openModal()"
+    style="padding: 10px 20px 10px 10px; color: black; font-weight: bold;  border-color: yellow  ; background-color: goldenrod; border-radius: 10px 20px 10px 10px; cursor: pointer; text-align: center; font-family: 'times', sans-serif; letter-spacing: 3px; text-transform: uppercase;">
+    <div style="margin-left: 10px; text-align: left;">Click this to see More about the agreement</div>
+</button>
+
+<!-- <button onclick="openModal()"  style="padding: 10px 10px 0px 110px ; color:black"> Click this to see More about the agreement</button> -->
+   
+    <!-- Modal popup -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>WELCOME to YEN E-COMMERCE</h2>
+            <h1>  </h1>
+            <!-- <p>Message</p> -->
+
+          
+            <p style="text-align: justify;">We are honored to have you.</p> 
+            
+            <p style="text-align: justify;">Welcome to our YEN e-commerce platform! Your presence as a seller is highly valued and we are excited to embark on this journey together. Once your application is approved by the Adminstrator, you will receive a confirmation call from our administrative team within 12 hours.</p> 
+            
+            <p style="text-align: justify;">After the confirmation call, you will be provided with the necessary login credentials to access our user-friendly system. These credentials will grant you access to your personalized seller dashboard, where you can manage your product, catagory and view customer feedback.</p>
+            
+            <p style="text-align: justify;">We appreciate your patience during this process and we look forward to having you on board as a verified seller. If you have any questions or require assistance, please feel free to contact our support team.</p> 
+             
+            <p style="text-align: justify;">. Please remember that uploading images or content that are unethical or unrelated to the product is not allowed. Let's
+            work together to maintain a positive and professional environment for everyone. If you have any questions about our
+            guidelines, feel free to reach out to us.</p> 
+            <p style="text-align: justify;">Thank you for choosing our e-commerce platform.</p>
+            
+            <p style="text-align: justify;">Best regards,</p>
+            <p style="text-align: justify;">YEN COMMERCE</p>
+
+            <br><br>
+            <!-- Rating functionality -->
+            <h3>Rate Our site:</h3>
+            <div id="stars">
+                <span onclick="rate(1)" style="font-size: 36px; fill: #ffffff; stroke: #000000;">&#9733;</span>
+                <span onclick="rate(2)" style="font-size: 36px; fill: #ffffff; stroke: #000000;">&#9733;</span>
+                <span onclick="rate(3)" style="font-size: 36px; fill: #ffffff; stroke: #000000;">&#9733;</span>
+                <span onclick="rate(4)" style="font-size: 36px; fill: #ffffff; stroke: #000000;">&#9733;</span>
+                <span onclick="rate(5)" style="font-size: 36px; fill: #ffffff; stroke: #000000;">&#9733;</span>
+              </div>
+            <p id="ratingText" style="color: #000;">Please rate your experience</p>
+        </div>
+    </div>
+
+    <script>
+        // Open modal popup
+        function openModal() {
+            document.getElementById("myModal").style.display = "block";
+        }
+
+        // Close modal popup
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        // Rating functionality
+        function rate(stars) {
+        document.getElementById("ratingText").innerHTML = "You rated your experience as " + stars + " stars.";
+        // Change color to green when rated
+        document.querySelectorAll('#stars span').forEach(function(star, index) {
+            if (index < stars) {
+                star.style.color = '#00FF00'; // Green color
+            } else {
+                star.style.color = '#000'; // Black color
+            }
+        });
+    }
+    </script>
+
+</body>
+</html>
